@@ -1,0 +1,95 @@
+<style>
+    .line {
+        border-style: solid;
+        border-width: 1px;
+        width: 800px;
+        height: 500px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 7px;
+    }
+    
+    table {
+        padding: 5px;
+    }
+    
+    input[type=text],
+    input[type=number] {
+        background-color: lightgrey;
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        border: 0;
+    }
+    
+    .div {
+        text-align: center;
+    }
+    
+    .button {
+        width: 6%;
+    }
+    
+    .box {
+        margin: 2px;
+        border-style: solid;
+        border-width: 2px;
+        width: 85%;
+        padding: 25px
+    }
+    
+    input[type='radio']:after {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: #d1d3d1;
+        display: inline-block;
+    }
+    
+    input[type='radio']:checked:after {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: lightgreen;
+        content: '';
+        border: 2px solid green;
+    }
+</style>
+<div class="line">
+    <form>
+        <table>
+            <tr>
+                <td>District Name</td>
+                <td><input type="text" ng-model="name"></td>
+            </tr>
+            <tr>
+                <td>Area (sq mt)</td>
+                <td><input type="number" ng-model="area"></td>
+            </tr>
+            <tr>
+                <td>Population</td>
+                <td><input type="number" ng-model="population"></td>
+            </tr>
+        </table>
+        <div class="div"><button class="button">Save</button></div>
+
+    </form>
+    <br>
+    <br>
+    <div class="box">
+        Biggest District (Area wise)
+        <br>
+        <input type="radio" ng-model="district" value="Chennai">Chennai&emsp;
+        <input type="radio" ng-model="district" value="Coimbatore">Coimbatore&emsp;
+        <input type="radio" ng-model="district" value="salem">Salem
+    </div>
+    <br>
+    <div class="box">
+        Highly populated District<br>
+        <input type="radio" ng-model="district" value="chennai">Chennai&emsp;
+        <input type="radio" ng-model="district" value="coimbatore">Coimbatore&emsp;
+        <input type="radio" ng-model="district" value="salem">Salem
+    </div>
+</div>
+<router-outlet></router-outlet>
